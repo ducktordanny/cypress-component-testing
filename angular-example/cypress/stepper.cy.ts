@@ -1,4 +1,4 @@
-import {StepperComponent} from "../src/app/stepper.component";
+import {StepperComponent} from "../src/app/components/stepper.component";
 
 describe('StepperComponent', () => {
   const incrementSelector = '[data-test-id="stepper.increment"]';

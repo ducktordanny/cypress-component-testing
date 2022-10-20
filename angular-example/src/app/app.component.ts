@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-example';
+
+  onPainSubmit(event: string) {
+    alert(event);
+  }
 }
