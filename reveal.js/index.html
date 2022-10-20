@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/beige.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -16,15 +16,115 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2
-						<aside class="notes">
-						<p>Some notes</p>
-						</aside>
-						<p>Some slide text</p>
-						<aside class="notes">
-						<p>and some more notes</p>
-					</aside>
+				<section>
+					<section>
+						<h1>Cypress<br>Component Testing</h1>
+					</section>
+					<section>
+						<h3>Cypress: Component Testing</h3>
+						<ul>
+							<li>Provides a testable component workbench</li>
+							<li>Isolates the component to test how it works</li>
+							<li>Supports several frameworks</li>
+							<ul>
+								<li>Angular</li>
+								<li>React</li>
+								<li>Vue</li>
+								<li>Svelte</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h3>Component Explorer</h3>
+						<p>Tools for Component Testing and CDD</p>
+						<ul>
+							<li>Storybook</li>
+							<li>Playground</li>
+							<li>Styleguidist</li>
+							<li>Chromatic</li>
+							<li>Vue-play</li>
+							<li>etc.</li>
+						</ul>
+						<p><b>New:</b> Cypress Component Testing (Beta)</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>E2E vs Component Testing</h2>
+					</section>
+					<section>
+						<h3>The same test runner, commands, and API</h3>
+						<img src="./slides/assets/02-same-but-different.gif">
+					</section>
+					<section>
+						<h3>E2E</h3>
+						<ul>
+							<li>Rendering within a complete website</li>
+							<li>Tests match the user experience</li>
+							<li>Can be used for integration testing as well</li>
+							<li>Can be written by developers or QA Teams</li>
+						</ul>
+						<hr>
+						<ul>
+							<li>More difficult to set up, run, and maintain</li>
+							<li>Testing certain scenarios require more setup</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Component</h3>
+						<ul>
+							<li>Using a development server</li>
+							<li>Easier to test components in isolation</li>
+							<li>Easy to set up specific scenarios in tests</li>
+							<li>Fewer dependencies on infrastructure</li>
+							<li>Fast and reliable</li>
+						</ul>
+						<hr>
+						<ul>
+							<li>Do not call into external APIs/Services</li>
+							<li>Usually written by developers working on the component</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Setup and demo</h2>
+					</section>
+					<section>
+						<h3>Getting started</h3>
+						<p><b>Install:</b> <pre style="width: fit-content; display: inline-block"><code>yarn add --dev cypress</code></pre> or <pre style="width: fit-content; display: inline-block"><code>npm i --save-dev cypress</code></pre></p>
+						<p><b>Configuring:</b> <pre style="width: fit-content; display: inline-block"><code>npx cypress open</code></pre></p>
+					</section>
+					<section>
+						<p>Choosing <b>Component Testing</b> and follow the process (Framework, Configuration files, Browser)</p>
+						<img src="./slides/assets/03-cypress-config-window.png" style="width: 75%">
+					</section>
+					<section>
+						<h3>Our first test</h3>
+						<p>Open component testing directly: <pre style="width: fit-content; display: inline-block"><code>npx cypress open --component</code></pre></p>
+						<p>Using <code>cy.mount()</code> instead of <code>cy.visit()</code>:</p>
+						<ol>
+							<li>Template code inside a string</li>
+							<li>Config object: <code>MountConfig&lt;T&gt;</code> (extends <code>TestModuleMetadata</code>)</li>
+							<li>Use the same API to make changes and check them</li>
+						</ol>
+					</section>
+					<section>
+						<h3>Demo</h3>
+						<img src="./slides/assets/03-demo.gif">
+					</section>
+				</section>
+				<section>
+					<h3>Storybook vs Cypress Component Testing</h3>
+					<ul>
+						<li>Differences?</li>
+						<li>Which to choose?</li>
+					</ul>
+					<br>
+					<img src="./slides/assets/04-which-to-choose.gif">
+				</section>
+				<section>
+					<img src="./slides/assets/05-end.gif">
 				</section>
 			</div>
 		</div>
